@@ -1,0 +1,29 @@
+{
+  "name": "node-cards",
+  "version": "1.0.0",
+  "description": "Create a random deck of cards.",
+  "main": "src/deck.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khafradev/node-cards.git"
+  },
+  "keywords": [
+    "cards",
+    "cards",
+    "deck",
+    "of",
+    "cards"
+  ],
+  "author": "Khafra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khafradev/node-cards/issues"
+  },
+  "homepage": "https://github.com/khafradev/node-cards#readme"
+}
