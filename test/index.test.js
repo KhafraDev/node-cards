@@ -1,9 +1,18 @@
 const Deck = require('../src/deck');
-const deck = new Deck({ shuffleTimes: 10 }).start();
-const deck_ = new Deck().start(10);
+const assert = require('assert');
 
-console.assert(deck.length === deck_.length, 'both decks contain 52 cards.');
-console.assert([...new Set(deck)].length === 52, 'no duplicate cards');
-console.assert([...new Set(deck_)].length === 52, 'no duplicate cards');
+const deck = new Deck();
 
-console.log('tests are done, if you did not see a message in console, tests succeeded!');
+describe('node-deck', () => {
+    it('Created a deck of 52 cards', () => {
+        assert.equal(deck.length, 52);
+    });
+
+    it('No duplicate cards are present', () => {
+        assert.equal([...new Set(deck)].length, 52);
+    });
+
+    it('Returns an Array of strings', () => {
+        assert.equal(deck instanceof Array && deck.every(c => typeof c === 'string'), true);
+    });
+});

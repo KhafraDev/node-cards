@@ -1,13 +1,13 @@
 {
   "name": "node-cards",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a random deck of cards.",
   "main": "src/deck.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "test/index.test.js"
+    "test": "mocha test/index.test.js"
   },
   "repository": {
     "type": "git",

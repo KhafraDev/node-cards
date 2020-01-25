@@ -1,15 +1,20 @@
 const { randomBytes } = require('crypto');
 
 class Deck {
+    /**
+     * @param {{ shuffleTimes= }} options 
+     * @returns {string[]} Deck of cards
+     */
     constructor({
-        shuffleTimes = 1
+        shuffleTimes
     } = {}) {
         this.shuffleTimes = shuffleTimes;
+        return this.start();
     }
 
     /**
      * creates a complete deck of cards, unrandomized
-     * @returns {Array<string>} deck of cards
+     * @returns {string[]} deck of cards
      */
     create() {
         const empty = Array(52).fill();
@@ -61,13 +66,12 @@ class Deck {
 
     /**
      * Creates and randomized the array ``this.shuffleTimes`` amount(s) (defaults to 1).
-     * @param {number|null} times Number of times to randomize; defaults to ``this.shuffleTimes``.
      * @returns {string[]} Randomized card array.
      */
-    start(times = null) {
+    start() {
         this.create();
 
-        for(let i = 0; i < (times || this.shuffleTimes); i++) {
+        for(let i = 0; i < (this.shuffleTimes || 1); i++) {
             this.shuffle();
         }
 
